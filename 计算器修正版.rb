@@ -1,48 +1,65 @@
-@i =1
-def shuru
+@i=1
+def enter
 	if @i==1
 		then
-		puts "ÇëÊäÈëµÚÒ»¸öÕûÊı:"
-		@number1 = gets.chomp()
-		puts "ÇëÊäÈë + - * / :"
-		@op = gets.chomp()
+		puts "è¯·è¾“å…¥ç¬¬ä¸€ä¸ªæ•´æ•°:"
+		number1 = gets.chomp()
+		isNumber(number1 ,0)
+		puts "è¯·è¾“å…¥ + - * /"
 	else
-		puts "ÇëÊäÈëÕıÈ·µÄÔËËã·û+ - * / "
-		@op = gets.chomp()
+		puts "è¯·è¾“å…¥æ­£ç¡®çš„è¿ç®—ç¬¦: + - * / "
 	end
-	panduanop	
+	@op = gets.chomp()
+	judge
 end
 
-def panduanop
+def isNumber(num,name)
+	if num.to_i.to_s == num
+		then
+			if 0 == name
+				@number1=num
+			else
+				@number2=num
+			end
+	else
+	  	puts "è¯·æ­£ç¡®è¾“å…¥æ•°å­—:"
+	  	num = gets.chomp()
+		isNumber(num,name) 
+	end  
+	
+end
+
+def judge
 	if @op=="+"||@op=="-"||@op=="*"||@op=="/"
-		puts "ÇëÊäÈëµÚ¶ş¸öÕûÊı:"
-		@number2 = gets.chomp()
-		jisuan
+		puts "è¯·è¾“å…¥ç¬¬äºŒä¸ªæ•´æ•°:"
+		number2 = gets.chomp()
+		isNumber(number2,1)
+		calculate
 	else
 		@i=2
-		shuru
+		enter
 	end	
 end
 
-def jisuan
+def calculate
 	case @op
 		when "+"
-			puts "ÕıÔÚ½øĞĞ¼Ó·¨ÔËËã"
+			puts "æ­£åœ¨è¿›è¡ŒåŠ æ³•è¿ç®—"
 			@result = @number1.to_i + @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 		when "-"
-			puts "ÕıÔÚ½øĞĞ¼õ·¨ÔËËã"
+			puts "æ­£åœ¨è¿›è¡Œå‡æ³•è¿ç®—"
 			@result = @number1.to_i - @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 		when "*"
-			puts "ÕıÔÚ½øĞĞ³Ë·¨·¨ÔËËã"
+			puts "æ­£åœ¨è¿›è¡Œä¹˜æ³•æ³•è¿ç®—"
 			@result = @number1.to_i * @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 		when "/"
-			puts "ÕıÔÚ½øĞĞ³ı·¨ÔËËã"
+			puts "æ­£åœ¨è¿›è¡Œé™¤æ³•è¿ç®—"
 			@result = @number1.to_i / @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 	end	
 end
-#¿ªÊ¼ÔËĞĞ
-shuru
+#å¼€å§‹è¿è¡Œ
+enter
