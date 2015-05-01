@@ -44,19 +44,19 @@ end
 def calculate
 	case @op
 		when "+"
-			puts "正在进行加法运算"
+			puts "正在进行加法运算.."
 			@result = @number1.to_i + @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 		when "-"
-			puts "正在进行减法运算"
+			puts "正在进行减法运算.."
 			@result = @number1.to_i - @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 		when "*"
-			puts "正在进行乘法法运算"
+			puts "正在进行乘法法运算.."
 			@result = @number1.to_i * @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 		when "/"
-			puts "正在进行除法运算"
+			puts "正在进行除法运算.."
 			@result = @number1.to_i / @number2.to_i
 			puts "#{@number1}#{@op}#{@number2}=#{@result}"
 	end	
