@@ -1,0 +1,52 @@
+
+puts 'ruby,GoGoGo'
+
+class Person
+  def initialize(name)
+     @name=name
+  end
+
+  def show_name
+     puts @name
+     end
+  end
+
+  zhao = Person.new'zhao jun'
+  qian = Person.new'qian feng'
+
+  zhao.show_name
+  qian.show_name
+
+  3.times do |m|
+    m='hello world ruby'
+      puts m
+    end
+
+  people = ['zhao','qian']
+
+  people.each do |x|
+    puts x
+	end
+
+
+
+
+    module Show
+        def show_msg
+            puts self.class
+        end
+        Pi=3.14
+    end
+
+    class Desk
+        include Show
+    end
+    class Pe
+         include Show
+    end
+
+    Pi=2
+    puts Show::Pi #3.14
+
+    Desk.new.show_msg #Desk
+    Pe.new.show_msg #Person
