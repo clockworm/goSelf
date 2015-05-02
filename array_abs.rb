@@ -5,6 +5,7 @@
 区别 当出现有0的时候 输出结果就不一致了.(因为方便分析,故未做处理)
 =end
 # 方法一  开始
+puts "绝对值..."
 a=[]
 b=[]
 i=0
@@ -68,7 +69,11 @@ def min_diff array_a_, array_b_
   last = array_both[0]
   array_both[1,array_both.length].each do |i|
     if i[0] != last[0] && i[1]-last[1]<result
-      result = i[1]-last[1]
+      if result == 0 then
+      		result = 1
+      end
+      result = i[1]-last[1]==0 ? result : i[1]-last[1]
+     # result = i[1]-last[1]
     end
     last = i
   end
