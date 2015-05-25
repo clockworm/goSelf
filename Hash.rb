@@ -6,7 +6,7 @@
  puts "删除日元    #{money_hash.delete("日元")}"
  puts "      有#{money_hash.length}个元素"
  puts "查询国际货币 #{money_hash.keys()}"
- puts "查询国际货币简称 #{money_hash.values()}"
+ puts "查询国际货币简称 #{money_hash.values()[1]}"
 
  puts "----------添加澳币-------------------------------------------"
  money_hash["澳币"]="aobi"
@@ -20,7 +20,7 @@
  	puts "      #{key}..#{value}"
  end
  puts ""
- money_hash.each_pair do |x|
+ money_hash.each do |x|
  	puts x
  end
  puts "           遍历key:"
